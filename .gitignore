@@ -42,3 +42,7 @@ next-env.d.ts
 
 *storybook.log
 storybook-static
+
+# typed-scss-modules
+*.module.css.d.ts
+*.module.scss.d.ts

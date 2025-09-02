@@ -1,0 +1,28 @@
+.input {
+  width: stretch;
+  padding: 12px 16px;
+  font-size: 16px;
+  background: #fff;
+  border-color: #565656;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+
+  &::placeholder {
+    color: #a0a0a0;
+  }
+
+  &:focus-visible {
+    outline: solid 4px #4294ff7f;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background: #e7e7e7;
+  }
+
+  &[data-error='true'] {
+    background: #f9cfcf;
+    border-color: #d32827;
+  }
+}

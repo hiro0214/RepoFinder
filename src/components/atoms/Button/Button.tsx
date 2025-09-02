@@ -18,6 +18,19 @@ type Props = {
   variant?: VariantType
 } & ElementProps
 
+/**
+ * @name Button
+ * @example
+ * <Button
+ *   type='submit'
+ *   label='送信'
+ *   onClick={onClick}
+ *   size="md"
+ *   color="primary"
+ *   variant='contained'
+ *   disabled
+ * />
+ */
 export const Button = (_props: Props) => {
   const {
     type = 'button',

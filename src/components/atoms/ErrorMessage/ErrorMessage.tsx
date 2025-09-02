@@ -1,9 +1,11 @@
 'use client'
 
+import clsx from 'clsx'
 import styles from './style.module.scss'
 
 type Props = {
   text: string
+  classNames?: string
 }
 
 /**
@@ -12,7 +14,7 @@ type Props = {
  * <ErrorMessage text='エラーメッセージがはいります。' />
  */
 export const ErrorMessage = (props: Props) => {
-  const { text } = props
+  const { text, classNames } = props
 
-  return <p className={styles.text}>{text}</p>
+  return <p className={clsx(styles.text, classNames)}>{text}</p>
 }

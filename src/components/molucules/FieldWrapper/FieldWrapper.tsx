@@ -16,10 +16,10 @@ type Props = {
  * @name FieldWrapper
  * @example
  * <FieldWrapper
- *   id='name'
- *   label='名前'
- *   annotation='10文字以内で入力してください。'
- *   error='名前を入力してください。'
+ *   id='foo'
+ *   label='タイトル'
+ *   annotation='注釈がはいります。'
+ *   error='エラーメッセージがはいります。'
  * >
  *   <TextInput /> // any input components
  * </FieldWrapper>

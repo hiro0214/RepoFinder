@@ -1,0 +1,31 @@
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    background: #e6f0ff;
+    border-color: #90caf9;
+  }
+
+  &__inner {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    padding: 24px;
+  }
+
+  &__img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-size: 20px;
+    word-break: break-all;
+  }
+}

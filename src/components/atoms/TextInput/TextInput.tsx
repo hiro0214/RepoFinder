@@ -26,6 +26,7 @@ export const TextInput = (_props: Props) => {
 
   return (
     <input
+      id={register.name}
       type='text'
       {...register}
       placeholder={placeholder}

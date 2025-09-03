@@ -13,10 +13,10 @@ type Story = StoryObj<typeof FieldWrapper>
 
 export const Default: Story = {
   args: {
-    id: 'name',
-    label: '名前',
-    annotation: '10文字以内で入力してください。',
-    error: '名前を入力してください。',
+    id: 'foo',
+    label: 'タイトル',
+    annotation: '注釈がはいります。',
+    error: 'エラーメッセージがはいります。',
     children: <div style={{ height: '50px', backgroundColor: '#ccc' }} />
   }
 }

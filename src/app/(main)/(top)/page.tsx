@@ -14,14 +14,12 @@ export default async function Page(props: Props) {
   const { keyword } = await searchParams
 
   return (
-    <div className={styles.container}>
-      <div className={styles.inner}>
-        <SearchForm keyword={keyword} />
+    <div className={styles.wrapper}>
+      <SearchForm keyword={keyword} />
 
-        <Suspense fallback={<Spinner />}>
-          <RepositoryList keyword={keyword} />
-        </Suspense>
-      </div>
+      <Suspense fallback={<Spinner />}>
+        <RepositoryList keyword={keyword} />
+      </Suspense>
     </div>
   )
 }

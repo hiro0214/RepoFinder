@@ -1,7 +1,7 @@
 'use client'
 
 import type { Repository } from '@/services/repository/type'
-import { Card } from './components/Card/Card'
+import { Card } from './components/Card'
 import styles from './style.module.scss'
 
 type Props = {
@@ -21,7 +21,7 @@ export const Presentational = (props: Props) => {
   return (
     <ul className={styles.list}>
       {items.map((item) => (
-        <Card key={item.id} item={item} />
+        <Card key={item.id} data={item} />
       ))}
     </ul>
   )

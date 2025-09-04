@@ -8,8 +8,12 @@ export type Repository = {
   id: number
   name: string
   full_name: string
-  owner: Owner
-  language: string
+  html_url: string
+  description: string | null
+  created_at: string
+  updated_at: string
+  owner?: Owner
+  language: string | null
   stargazers_count: number
   watchers_count: number
   open_issues_count: number

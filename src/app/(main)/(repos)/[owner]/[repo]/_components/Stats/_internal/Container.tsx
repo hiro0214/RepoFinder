@@ -8,6 +8,8 @@ type Props = {
 
 /**
  * @name Stats Container
+ * @description リポジトリの詳細を表示するコンテナ
+ * @fetch getRepository() - services/getRepository
  */
 export const Container = async (props: Props) => {
   const { owner, repo } = props

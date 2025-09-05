@@ -6,6 +6,10 @@ type Props = {
   params: Promise<{ owner: string; repo: string }>
 }
 
+/**
+ * @path /{owner}/{repo}
+ * @description リポジトリ詳細ページ
+ */
 export default async function Page(props: Props) {
   const { params } = props
 

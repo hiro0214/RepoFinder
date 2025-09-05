@@ -1,3 +1,4 @@
+import { createHandlers } from '..'
 import type { Repository } from './type'
 
 type Request = {
@@ -7,11 +8,16 @@ type Request = {
 
 type Response = Repository
 
-export const getRepository = async (props: Request) => {
+/**
+ * @description リポジトリの詳細を取得する
+ * @endpoint GET https://api.github.com/repos/{owner}/{repo}
+ * @param owner {string} オーナー名
+ * @param repo {string} リポジトリ名
+ */
+export const getRepository = async (props: Request): Promise<Response> => {
   const { owner, repo } = props
 
-  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`)
-  const data: Response = await res.json()
+  const { succeed, failed } = createHandlers('getRepository')
 
-  return data
+  return fetch(`https://api.github.com/repos/${owner}/${repo}`).then(succeed).catch(failed)
 }

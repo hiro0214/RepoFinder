@@ -9,6 +9,7 @@ type Props = {
 
 /**
  * @name SearchForm Container
+ * @description 検索フォームのコンテナ
  */
 export const Container = (props: Props) => {
   const { keyword } = props

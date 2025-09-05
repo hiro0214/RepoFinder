@@ -8,6 +8,10 @@ type Props = {
   searchParams: Promise<{ [key: string]: string }>
 }
 
+/**
+ * @path /
+ * @description トップページ
+ */
 export default async function Page(props: Props) {
   const { searchParams } = props
 

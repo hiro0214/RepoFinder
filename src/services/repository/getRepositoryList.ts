@@ -1,3 +1,4 @@
+import { createHandlers } from '..'
 import type { Repository } from './type'
 
 type Request = {
@@ -10,11 +11,17 @@ type Response = {
   total_count: number
 }
 
-export const getRepositoryList = async (props: Request) => {
+/**
+ * @description リポジトリの一覧を取得する
+ * @endpoint GET https://api.github.com/search/repositories?q={keyword}
+ * @param keyword {string} キーワード
+ */
+export const getRepositoryList = async (props: Request): Promise<Response> => {
   const { keyword } = props
 
-  const res = await fetch(`https://api.github.com/search/repositories?q=${keyword}`)
-  const data: Response = await res.json()
+  const { succeed, failed } = createHandlers('getRepositoryList')
 
-  return data
+  return fetch(`https://api.github.com/search/repositories?q=${keyword}`)
+    .then(succeed)
+    .catch(failed)
 }

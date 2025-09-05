@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  height: calc(100dvh - 82px - 108px);
+}
+
+.heading {
+  text-align: center;
+}
+
+.title {
+  margin-top: 24px;
+  font-size: 36px;
+}
+
+.text {
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+.button-wrapper {
+  width: 250px;
+}

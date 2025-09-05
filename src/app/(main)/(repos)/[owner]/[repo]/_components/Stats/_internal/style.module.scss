@@ -1,5 +1,6 @@
 .stats {
   display: block;
+  container: stats-container / inline-size;
 
   &__heading {
     display: flex;
@@ -9,15 +10,11 @@
   }
 
   &__list {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 125px);
     gap: 16px;
     justify-content: center;
     margin-top: 48px;
-
-    > li {
-      width: 120px;
-    }
   }
 }
 
@@ -54,7 +51,8 @@
 
   &__footer {
     display: flex;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 8px 16px;
     margin-top: 24px;
     font-size: 14px;
   }
@@ -69,5 +67,27 @@
     flex-direction: column;
     gap: 24px;
     width: min(100%, 250px);
+  }
+}
+
+@container stats-container (max-width: 600px) {
+  .stats {
+    &__heading {
+      flex-direction: column;
+    }
+
+    &__list {
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 125px));
+    }
+  }
+
+  .owner {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .info {
+    width: stretch;
   }
 }

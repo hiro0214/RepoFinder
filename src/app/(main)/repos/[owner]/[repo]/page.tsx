@@ -7,7 +7,7 @@ type Props = {
 }
 
 /**
- * @path /{owner}/{repo}
+ * @path /repos/{owner}/{repo}
  * @description リポジトリ詳細ページ
  */
 export default async function Page(props: Props) {

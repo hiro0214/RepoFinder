@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { ErrorMessage } from './ErrorMessage'
+import { ErrorMessage } from '.'
 
 const meta = {
   title: 'Components/Atoms/ErrorMessage',

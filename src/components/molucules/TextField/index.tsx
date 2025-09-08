@@ -3,7 +3,7 @@
 import type { JSX } from 'react'
 import type { UseFormRegisterReturn } from 'react-hook-form'
 import { TextInput } from '@/components/atoms'
-import { FieldWrapper } from '../FieldWrapper/FieldWrapper'
+import { FieldWrapper } from '../FieldWrapper'
 
 type ElementProps = JSX.IntrinsicElements['input']
 

@@ -19,5 +19,7 @@ export const getRepository = async (props: Request): Promise<Response> => {
 
   const { succeed, failed } = createHandlers('getRepository')
 
-  return fetch(`https://api.github.com/repos/${owner}/${repo}`).then(succeed).catch(failed)
+  const url = `https://api.github.com/repos/${owner}/${repo}`
+
+  return fetch(url).then(succeed).catch(failed)
 }

@@ -15,14 +15,14 @@ type Props = {
 export default async function Page(props: Props) {
   const { searchParams } = props
 
-  const { keyword } = await searchParams
+  const { keyword, page } = await searchParams
 
   return (
     <div className={styles.wrapper}>
       <SearchForm keyword={keyword} />
 
       <Suspense fallback={<Spinner />}>
-        <RepositoryList keyword={keyword} />
+        <RepositoryList keyword={keyword} page={page} />
       </Suspense>
     </div>
   )

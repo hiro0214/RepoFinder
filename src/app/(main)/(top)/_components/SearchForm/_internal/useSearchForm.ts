@@ -23,7 +23,9 @@ export const useSearchForm = (props: Props) => {
   const onSubmit: SubmitHandler<FormType> = (formData) => {
     const { keyword } = formData
 
-    router.push(`?keyword=${encodeURIComponent(keyword)}`)
+    const query = `keyword=${encodeURIComponent(keyword)}&page=1`
+
+    router.push(`?${query}`)
   }
 
   return { form, onSubmit }

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { useForm } from 'react-hook-form'
-import { TextInput } from './TextInput'
+import { TextInput } from '.'
 
 const meta = {
   title: 'Components/Atoms/TextInput',

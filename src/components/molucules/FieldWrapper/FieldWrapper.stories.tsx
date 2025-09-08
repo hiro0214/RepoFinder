@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { FieldWrapper } from './FieldWrapper'
+import { FieldWrapper } from '.'
 
 const meta = {
   title: 'Components/Molucules/FieldWrapper',

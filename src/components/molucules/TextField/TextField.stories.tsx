@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { useForm } from 'react-hook-form'
 import z from 'zod'
-import { TextField } from './TextField'
+import { TextField } from '.'
 
 const meta = {
   title: 'Components/Molucules/TextField',

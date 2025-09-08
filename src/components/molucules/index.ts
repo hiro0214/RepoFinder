@@ -1,2 +1,3 @@
-export { FieldWrapper } from './FieldWrapper/FieldWrapper'
-export { TextField } from './TextField/TextField'
+export { FieldWrapper } from './FieldWrapper'
+export { Pagination } from './Pagination'
+export { TextField } from './TextField'

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { action } from 'storybook/actions'
 import { Button } from '.'
 
 const meta = {
@@ -7,7 +8,7 @@ const meta = {
   tags: ['autodocs'],
   args: {
     label: 'ボタン',
-    onClick: () => console.log('clicked')
+    onClick: action('clicked')
   }
 } satisfies Meta<typeof Button>
 

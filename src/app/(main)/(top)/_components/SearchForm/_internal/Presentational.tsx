@@ -24,7 +24,7 @@ export const Presentational = (props: Props) => {
   } = form
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} aria-label='search-form'>
       <TextField
         label='キーワード'
         annotation='キーワードでリポジトリの検索をすることができます。'

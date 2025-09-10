@@ -25,14 +25,14 @@ export const Presentational = (props: Props) => {
   }
 
   return (
-    <>
-      <ul className={styles.list}>
+    <div className={styles.wrapper}>
+      <ul className={styles.list} aria-label='repository-list'>
         {items.map((item) => (
           <Card key={item.id} data={item} />
         ))}
       </ul>
 
       <Pagination currentPage={page} totalCount={totalCount} onPageChange={handlePageChange} />
-    </>
+    </div>
   )
 }

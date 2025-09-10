@@ -28,7 +28,13 @@ export const TextField = (_props: Props) => {
   const { label, annotation, register, error, ...props } = _props
 
   return (
-    <FieldWrapper id={register.name} label={label} annotation={annotation} error={error}>
+    <FieldWrapper
+      id={register.name}
+      label={label}
+      annotation={annotation}
+      error={error}
+      aria-label='text-field'
+    >
       <TextInput register={register} error={!!error} {...props} />
     </FieldWrapper>
   )

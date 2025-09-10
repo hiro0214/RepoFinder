@@ -42,7 +42,7 @@ export const Pagination = (props: Props) => {
   }
 
   return (
-    <ul className={styles.wrapper}>
+    <ul className={styles.wrapper} aria-label='pagination'>
       <li className={styles.item}>
         <button
           type='button'

@@ -25,7 +25,7 @@ export const Presentational = (props: Props) => {
     owner,
     language,
     stargazers_count,
-    watchers_count,
+    subscribers_count,
     open_issues_count,
     forks_count
   } = data
@@ -61,7 +61,7 @@ export const Presentational = (props: Props) => {
 
         <ul className={styles.stats__list}>
           <Stat label='Star数' count={stargazers_count} />
-          <Stat label='Watcher数' count={watchers_count} />
+          <Stat label='Watcher数' count={subscribers_count} />
           <Stat label='Fork数' count={forks_count} />
           <Stat label='Issue数' count={open_issues_count} />
         </ul>

@@ -2,7 +2,7 @@
   "name": "repofinder",
   "scripts": {
     "tsm": "typed-scss-modules 'src/**/*.module.{css,scss}' -w -n none -e default -L error",
-    "dev": "next dev --turbopack & npm run tsm",
+    "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
     "biome": "biome format --write --no-errors-on-unmatched",

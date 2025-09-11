@@ -14,7 +14,7 @@ type Props = {
 export const Container = (props: Props) => {
   const { keyword } = props
 
-  const { form, onSubmit } = useSearchForm({ keyword })
+  const { isPending, form, onSubmit } = useSearchForm({ keyword })
 
-  return <Presentational form={form} onSubmit={onSubmit} />
+  return <Presentational form={form} onSubmit={onSubmit} isPending={isPending} />
 }

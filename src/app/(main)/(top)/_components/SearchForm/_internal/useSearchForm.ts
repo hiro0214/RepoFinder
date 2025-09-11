@@ -2,6 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
+import { useTransition } from 'react'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import { type FormType, schema } from './schema'
 
@@ -13,6 +14,7 @@ export const useSearchForm = (props: Props) => {
   const { keyword } = props
 
   const router = useRouter()
+  const [isPending, startTransition] = useTransition()
 
   const form = useForm({
     mode: 'onChange',
@@ -25,8 +27,10 @@ export const useSearchForm = (props: Props) => {
 
     const query = `keyword=${encodeURIComponent(keyword)}&page=1`
 
-    router.push(`?${query}`)
+    startTransition(() => {
+      router.push(`?${query}`)
+    })
   }
 
-  return { form, onSubmit }
+  return { isPending, form, onSubmit }
 }

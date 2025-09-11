@@ -9,13 +9,14 @@ import styles from './style.module.scss'
 type Props = {
   form: UseFormReturn<FormType>
   onSubmit: SubmitHandler<FormType>
+  isPending: boolean
 }
 
 /**
  * @name SearchForm Presentational
  */
 export const Presentational = (props: Props) => {
-  const { form, onSubmit } = props
+  const { form, onSubmit, isPending } = props
 
   const {
     register,
@@ -34,7 +35,7 @@ export const Presentational = (props: Props) => {
       />
 
       <div className={styles['button-wrapper']}>
-        <Button type='submit' label='検索' size='lg' />
+        <Button type='submit' label='検索' size='lg' disabled={isPending} />
       </div>
     </form>
   )

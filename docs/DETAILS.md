@@ -10,6 +10,10 @@
 - React Hook Form ➡️ フォーム管理
 - Zod ➡️ 型安全なバリデーション
 
+### API
+
+- Github API
+
 ### Linter / Formatter
 
 - Biome ➡️ ts/tsxのlint & format
@@ -28,27 +32,27 @@
 
 ```
 src
-├─ app # App Router配下。ページやレイアウトを管理
-│  ├─ _components # appディレクトリ配下用のUIコンポーネント
-│  ├─ (main) # メインのルーティング用ディレクトリ
-│  │  ├─ (top) # トップページ
-│  │  └─ repos # 詳細ページ
-│  ├─ error.tsx # グローバルエラーページ
-│  ├─ layout.tsx # 共通レイアウト
-│  └─ not-found.tsx # 404ページ
+├─ app               # App Router配下。ページやレイアウトを管理
+│  ├─ _components    # appディレクトリ配下用のUIコンポーネント
+│  ├─ (main)         # メインのルーティング用ディレクトリ
+│  │  ├─ (top)       # トップページ
+│  │  └─ repos       # 詳細ページ
+│  ├─ error.tsx      # グローバルエラーページ
+│  ├─ layout.tsx     # 共通レイアウト
+│  └─ not-found.tsx  # 404ページ
 │
-├─ components # 再利用可能なUIコンポーネント
-│  ├─ atoms # 最小単位のコンポーネント
-│  └─ molucules # 複合コンポーネント
+├─ components    # 再利用可能なUIコンポーネント
+│  ├─ atoms      # 最小単位のコンポーネント
+│  └─ molucules  # 複合コンポーネント
 │
-├─ services # APIクライアント
+├─ services  # APIクライアント
 │
-├─ styles # グローバルスタイル
+├─ styles    # グローバルスタイル
 │
-└─ utils # 汎用的なユーティリティディレクトリ
-   ├─ configs # 定数などの設定ファイル
-   ├─ helpers # 補助関数
-   └─ hooks # カスタムフック
+└─ utils       # 汎用的なユーティリティディレクトリ
+   ├─ configs  # 定数などの設定ファイル
+   ├─ helpers  # 補助関数
+   └─ hooks    # カスタムフック
 ```
 
 また、(main)直下のページディレクトリの構成は下記をベースにしています。\
@@ -56,19 +60,19 @@ src
 
 ```
 (top)
-├─ _components # ページ専用のコンポーネントディレクトリ
-│  └─ SearchForm # 検索フォームコンポーネント
-│     ├─ _internal # コンポーネント内部の実装詳細
-│     │  ├─ Container.stories.tsx # ContainerのStorybook定義
-│     │  ├─ Container.tsx # fetchやロジックを持つコンポーネント（Server / Client）
-│     │  ├─ Presentational.stories.tsx # PresentationalのStorybook定義
-│     │  ├─ Presentational.tsx # UIを持つコンポーネント（Client Only）
-│     │  ├─ schema.ts # Zodによるバリデーションスキーマ
-│     │  ├─ style.module.scss # コンポーネント用のスタイル
-│     │  └─ useSearchForm.ts # Container.tsxで使用するカスタムフック
-│     └─ index.tsx # 公開用エントリーポイント（外部からはここをimport）
-├─ page.tsx # ルーティング用のファイル
-└─ style.module.scss # ページ全体のスタイル
+├─ _components    # ページ専用のコンポーネントディレクトリ
+│  └─ SearchForm  # 検索フォームコンポーネント
+│     ├─ _internal                      # コンポーネント内部の実装詳細
+│     │  ├─ Container.stories.tsx       # ContainerのStorybook定義
+│     │  ├─ Container.tsx               # fetchやロジックを持つコンポーネント（Server / Client）
+│     │  ├─ Presentational.stories.tsx  # PresentationalのStorybook定義
+│     │  ├─ Presentational.tsx          # UIを持つコンポーネント（Client Only）
+│     │  ├─ schema.ts                   # Zodによるバリデーションスキーマ
+│     │  ├─ style.module.scss           # コンポーネント用のスタイル
+│     │  └─ useSearchForm.ts            # Container.tsxで使用するカスタムフック
+│     └─ index.tsx                      # 公開用エントリーポイント（外部からはここをimport）
+├─ page.tsx           # ルーティング用のファイル
+└─ style.module.scss  # ページ全体のスタイル
 ```
 
 ## 設計思想
@@ -77,7 +81,8 @@ src
 
 ### 責務分離
 
-コンポーネント設計の方針として、Container/Presentationalパターンを採用し、ロジック・データ取得（Container）とUI部分（Presentational）を分離。\
+コンポーネント設計の方針として、Container/Presentationalパターンを採用し、\
+ロジック・データ取得（Container）とUI部分（Presentational）を分離。\
 これにより、ルーティング・ロジック・UIの責務を明確化し、保守性と拡張性を高めた。\
 また、app、components、services、utilsとディレクトリを分けていることで役割を明確にし、規模が大きくなっても見通しやすくなるように設計。
 
@@ -108,8 +113,8 @@ $ npm run test-vitest
 ### Storybook（UIテスト）
 
 Storybook上でstoriesを活用し、コンポーネント単位での表示や動作を検証。\
-状態やパターンごとにUIを体系的に確認できるため、見た目の崩れやパターン漏れを防止できる。
-また、Play Functionを用いてインタラクションテストも導入し、ユーザー操作をシミュレーションし、動作が期待通りかを確認できるようにしている。
+状態やパターンごとにUIを体系的に確認できるため、見た目の崩れやパターン漏れを防止できる。\
+また、Play Functionを用いてインタラクションテストも導入し、ユーザー操作をシミュレーションすることで、動作が期待通りかを確認できるようにしている。
 
 ```bash
 $ npm run test-storybook

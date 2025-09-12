@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { getRepositoryList } from '@/services/repository/getRepositoryList'
-import { Container } from './Container'
+import type { Container } from './Container'
 import { Presentational } from './Presentational'
 
 const meta = {
   title: 'Pages/Top/RepositoryList/Container',
-  component: Container,
   loaders: [
     async () => ({
       data: await getRepositoryList({ keyword: 'react', page: '1' })

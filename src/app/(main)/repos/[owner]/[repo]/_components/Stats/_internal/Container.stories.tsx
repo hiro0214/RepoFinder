@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { getRepository } from '@/services/repository/getRepository'
-import { Container } from './Container'
+import type { Container } from './Container'
 import { Presentational } from './Presentational'
 
 const meta = {
   title: 'Pages/repos/Stats/Container',
-  component: Container,
   loaders: [
     async () => ({
       data: await getRepository({ owner: 'facebook', repo: 'react' })

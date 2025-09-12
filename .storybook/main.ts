@@ -21,6 +21,18 @@ const config: StorybookConfig = {
       '@': path.resolve(__dirname, '../src')
     }
 
+    config.optimizeDeps = {
+      ...(config.optimizeDeps ?? {}),
+      include: [
+        ...(config.optimizeDeps?.include ?? []),
+        'react',
+        'react-dom',
+        'next/navigation',
+        'next/link',
+        'date-fns',
+        'storybook/test'
+      ]
+    }
     return config
   }
 }

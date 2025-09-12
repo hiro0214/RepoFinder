@@ -58,6 +58,7 @@ export const Pagination = (props: Props) => {
             type='button'
             onClick={() => onPageChange(page)}
             className={styles.button}
+            disabled={page === currentPage}
             data-selected={page === currentPage || undefined}
           >
             {page}

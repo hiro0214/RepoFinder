@@ -16,7 +16,7 @@ export const Card = (props: Props) => {
 
   return (
     <li className={styles.card}>
-      <Link href={`/repos/${full_name}`}>
+      <Link href={`/repos/${full_name}`} className={styles.card__link}>
         <div className={styles.card__inner}>
           {owner && (
             <Image

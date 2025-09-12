@@ -11,6 +11,11 @@
     border-color: #90caf9;
   }
 
+  &__link {
+    display: block;
+    border-radius: inherit;
+  }
+
   &__inner {
     display: flex;
     gap: 24px;

@@ -31,6 +31,10 @@
     }
   }
 
+  &:focus-visible {
+    outline: solid 4px #4294ff7f;
+  }
+
   &:disabled {
     pointer-events: none;
 

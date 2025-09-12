@@ -5,6 +5,12 @@ body {
   background: #e2e8f0;
 }
 
+a {
+  &:focus-visible {
+    outline: solid 2px #4294ff7f;
+  }
+}
+
 img {
   vertical-align: top;
 }

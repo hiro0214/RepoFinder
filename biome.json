@@ -12,7 +12,20 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "style": {
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "patterns": [
+              {
+                "group": ["**/_internal/*", "!./_internal/*"],
+                "message": "Direct imports from internal are not allowed."
+              }
+            ]
+          }
+        }
+      }
     },
     "domains": {
       "next": "recommended",
